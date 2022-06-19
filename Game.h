@@ -5,10 +5,14 @@
 #include "SFML/System.hpp"
 #include "SFML/Network.hpp"
 
+#include <string>
+
 class Game
 {
 private:
 	// Window
+	sf::VideoMode videoMode;
+	std::string name;
 	sf::RenderWindow* window;
 
 	// Initializer functions
