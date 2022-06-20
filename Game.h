@@ -1,11 +1,6 @@
 #pragma once
 
-#include "SFML/Graphics.hpp"
-#include "SFML/Window.hpp"
-#include "SFML/System.hpp"
-#include "SFML/Network.hpp"
-
-#include <string>
+#include "Phase.h"
 
 class Game
 {
@@ -15,14 +10,20 @@ private:
 	std::string name;
 	sf::RenderWindow* window;
 
+	// States
+	std::stack<Phase*> phases;
+
 	// Initializer functions
 	void initVariables();
 	void initWindow();
+	void initPhases();
 
 public:
 	// Constructors / Destructors
 	Game();
 	virtual ~Game();
+
+	void endApp();
 
 	// Update functions
 	void updateEvents();

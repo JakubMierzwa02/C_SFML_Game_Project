@@ -13,16 +13,27 @@ void Game::initWindow()
 	this->window->setFramerateLimit(120);
 }
 
+void Game::initPhases()
+{
+
+}
+
 // Constructors / Destructors
 Game::Game()
 {
 	this->initVariables();
 	this->initWindow();
+	this->initPhases();
 }
 
 Game::~Game()
 {
 	delete this->window;
+}
+
+void Game::endApp()
+{
+	std::cout << "Ending application \n";
 }
 
 // Update functions
@@ -42,6 +53,24 @@ void Game::updateEvents()
 void Game::update()
 {
 	this->updateEvents();
+
+	// Update states
+	if (!this->phases.empty())
+	{
+		this->phases.top()->update();
+
+		if (this->phases.top()->getQuit())
+		{
+			delete this->phases.top();
+			this->phases.pop();
+		}
+	}
+	// App end
+	else
+	{
+		this->endApp();
+		this->window->close();
+	}
 }
 
 // Render
