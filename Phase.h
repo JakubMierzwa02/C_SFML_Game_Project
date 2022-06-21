@@ -20,6 +20,7 @@ public:
 
 	// Functions
 	const bool getQuit() const;
+	void checkQuit();
 	virtual void endPhase() = 0;
 
 	virtual void update(const float&) = 0;

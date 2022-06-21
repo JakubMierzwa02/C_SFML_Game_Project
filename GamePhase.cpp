@@ -32,6 +32,7 @@ void GamePhase::updateInput(const float& dt)
 
 void GamePhase::update(const float& dt)
 {
+	this->checkQuit();
 	this->updateInput(dt);
 }
 

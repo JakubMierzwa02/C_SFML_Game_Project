@@ -20,6 +20,7 @@ void MainMenuPhase::endPhase()
 
 void MainMenuPhase::update(const float& dt)
 {
+	this->checkQuit();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
 		this->phases->push(new GamePhase(this->window, this->phases));
 }
