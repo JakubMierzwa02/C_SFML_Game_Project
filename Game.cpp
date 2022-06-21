@@ -64,10 +64,11 @@ void Game::update()
 	// Update states
 	if (!this->phases.empty())
 	{
-		this->phases.top()->update();
+		this->phases.top()->update(this->dt);
 
 		if (this->phases.top()->getQuit())
 		{
+			this->phases.top()->endPhase();
 			delete this->phases.top();
 			this->phases.pop();
 		}

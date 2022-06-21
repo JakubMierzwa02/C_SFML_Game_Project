@@ -11,21 +11,22 @@
 
 class Phase
 {
-private:
-
 protected:
 	sf::RenderWindow* window;
 
 	bool quit;
 
 public:
-	Phase(sf::RenderWindow* window);
+	// Constructors / Destructors
+	Phase(sf::RenderWindow*);
 	virtual ~Phase();
 
+	// Functions
 	const bool getQuit() const;
+	virtual void endPhase() = 0;
 
-	virtual void update() = 0;
-	virtual void render() = 0;
+	virtual void update(const float&) = 0;
+	virtual void render(sf::RenderTarget* = nullptr) = 0;
 
 };
 

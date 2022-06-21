@@ -9,7 +9,9 @@ main.cpp
 Game.h
 Game.cpp 
 Phase.h 
-Phase.cpp)
+Phase.cpp 
+GamePhase.h 
+GamePhase.cpp)
 
 target_link_libraries(SFML_Game sfml-audio sfml-graphics sfml-window sfml-system)
 
