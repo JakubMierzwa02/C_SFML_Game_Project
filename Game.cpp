@@ -5,6 +5,7 @@ void Game::initVariables()
 {
 	this->videoMode = sf::VideoMode(1280, 720);
 	this->name = "SFML Project";
+	this->dt = 0.f;
 }
 
 void Game::initWindow()
@@ -50,6 +51,12 @@ void Game::updateEvents()
 	}
 }
 
+void Game::updateDt()
+{
+	// Updates the dt variable with the time it takes to update and render one frame
+	this->dt = this->clock.restart().asSeconds();
+}
+
 void Game::update()
 {
 	this->updateEvents();
@@ -79,6 +86,10 @@ void Game::render()
 	this->window->clear();
 
 	// Render stuff
+	if (!this->phases.empty())
+	{
+		this->phases.top()->render();
+	}
 
 	this->window->display();
 }
@@ -88,6 +99,7 @@ void Game::run()
 	// Game loop
 	while (this->window->isOpen())
 	{
+		this->updateDt();
 		this->update();
 		this->render();
 	}

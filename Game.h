@@ -10,6 +10,10 @@ private:
 	std::string name;
 	sf::RenderWindow* window;
 
+	// Delta time
+	sf::Clock clock;
+	float dt;
+
 	// States
 	std::stack<Phase*> phases;
 
@@ -27,6 +31,7 @@ public:
 
 	// Update functions
 	void updateEvents();
+	void updateDt();
 	void update();
 
 	// Render
