@@ -3,15 +3,28 @@
 // Initializer functions
 void Game::initVariables()
 {
-	this->videoMode = sf::VideoMode(1280, 720);
-	this->name = "SFML Project";
+	//this->videoMode = sf::VideoMode(1280, 720);
+	//this->name = "SFML Project";
 	this->dt = 0.f;
 }
 
 void Game::initWindow()
 {
+	// Get config from window_config.ini file
+	std::ifstream in("Config/window_config.ini");
+	while (!in.eof())
+	{
+		std::getline(in, this->name);
+		in >> this->window_width;
+		in >> this->window_height;
+		in >> this->fps;
+	}
+	in.close();
+
+	// Init window
+	this->videoMode = sf::VideoMode(this->window_width, this->window_height);
 	this->window = new sf::RenderWindow(this->videoMode, this->name, sf::Style::Default);
-	this->window->setFramerateLimit(120);
+	this->window->setFramerateLimit(this->fps);
 }
 
 void Game::initPhases()

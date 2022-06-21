@@ -7,6 +7,9 @@ class Game
 {
 private:
 	// Window
+	unsigned int window_width;
+	unsigned int window_height;
+	unsigned int fps;
 	sf::VideoMode videoMode;
 	std::string name;
 	sf::RenderWindow* window;
