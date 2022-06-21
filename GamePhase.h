@@ -8,7 +8,7 @@ private:
 	Entity player;
 
 public:
-	GamePhase(sf::RenderWindow*);
+	GamePhase(sf::RenderWindow*, std::stack<Phase*>*);
 	virtual ~GamePhase();
 
 	void endPhase();

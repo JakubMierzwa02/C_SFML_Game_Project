@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Phase.h"
-#include "GamePhase.h"
+#include "MainMenuPhase.h"
 
 class Game
 {

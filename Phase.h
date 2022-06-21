@@ -5,13 +5,17 @@
 class Phase
 {
 protected:
+	// Window
 	sf::RenderWindow* window;
+
+	// Phases
+	std::stack<Phase*>* phases;
 
 	bool quit;
 
 public:
 	// Constructors / Destructors
-	Phase(sf::RenderWindow*);
+	Phase(sf::RenderWindow*, std::stack<Phase*>*);
 	virtual ~Phase();
 
 	// Functions

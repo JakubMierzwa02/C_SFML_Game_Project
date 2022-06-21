@@ -1,9 +1,10 @@
 #include "GamePhase.h"
 
-GamePhase::GamePhase(sf::RenderWindow* window)
-	: Phase(window)
+GamePhase::GamePhase(sf::RenderWindow* window, std::stack<Phase*>* phases)
+	: Phase(window, phases)
 {
-
+	// REMOVE LATER !!!
+	std::cout << "Starting GamePhase \n";
 }
 
 GamePhase::~GamePhase()

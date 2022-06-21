@@ -29,7 +29,8 @@ void Game::initWindow()
 
 void Game::initPhases()
 {
-	this->phases.push(new GamePhase(this->window));
+	//this->phases.push(new GamePhase(this->window, &this->phases));
+	this->phases.push(new MainMenuPhase(this->window, &this->phases));
 }
 
 // Constructors / Destructors
