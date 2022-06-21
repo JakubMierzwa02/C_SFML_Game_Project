@@ -16,7 +16,7 @@ void Game::initWindow()
 
 void Game::initPhases()
 {
-
+	this->phases.push(new GamePhase(this->window));
 }
 
 // Constructors / Destructors
@@ -30,6 +30,12 @@ Game::Game()
 Game::~Game()
 {
 	delete this->window;
+
+	while (!this->phases.empty())
+	{
+		delete this->phases.top();
+		this->phases.pop();
+	}
 }
 
 void Game::endApp()

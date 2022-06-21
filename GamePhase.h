@@ -5,7 +5,7 @@
 class GamePhase : public Phase
 {
 private:
-
+	
 
 public:
 	GamePhase(sf::RenderWindow*);

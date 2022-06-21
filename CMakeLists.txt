@@ -11,7 +11,9 @@ Game.cpp
 Phase.h 
 Phase.cpp 
 GamePhase.h 
-GamePhase.cpp)
+GamePhase.cpp 
+Entity.h 
+Entity.cpp)
 
 target_link_libraries(SFML_Game sfml-audio sfml-graphics sfml-window sfml-system)
 

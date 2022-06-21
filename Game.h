@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Phase.h"
+#include "GamePhase.h"
 
 class Game
 {
