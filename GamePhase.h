@@ -11,8 +11,6 @@ public:
 	GamePhase(sf::RenderWindow*, std::stack<Phase*>*);
 	virtual ~GamePhase();
 
-	void endPhase();
-
 	// Functions
 	void updateInput(const float&);
 	void update(const float&);

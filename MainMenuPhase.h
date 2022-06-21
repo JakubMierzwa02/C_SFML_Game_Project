@@ -11,8 +11,6 @@ public:
 	MainMenuPhase(sf::RenderWindow*, std::stack<Phase*>*);
 	virtual ~MainMenuPhase();
 
-	void endPhase();
-
 	// Functions
 	void update(const float&);
 	void render(sf::RenderTarget* = nullptr);

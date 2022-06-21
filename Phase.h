@@ -20,8 +20,7 @@ public:
 
 	// Functions
 	const bool getQuit() const;
-	void checkQuit();
-	virtual void endPhase() = 0;
+	void endPhase();
 
 	virtual void update(const float&) = 0;
 	virtual void render(sf::RenderTarget* = nullptr) = 0;

@@ -12,11 +12,6 @@ GamePhase::~GamePhase()
 
 }
 
-void GamePhase::endPhase()
-{
-	std::cout << "Ending GamePhase \n";
-}
-
 void GamePhase::updateInput(const float& dt)
 {
 	// Update player input
@@ -28,11 +23,13 @@ void GamePhase::updateInput(const float& dt)
 		this->player.move(dt, 0, -1.f);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		this->player.move(dt, 0, 1.f);
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		this->endPhase();
 }
 
 void GamePhase::update(const float& dt)
 {
-	this->checkQuit();
 	this->updateInput(dt);
 }
 

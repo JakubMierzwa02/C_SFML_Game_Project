@@ -17,9 +17,8 @@ const bool Phase::getQuit() const
 	return this->quit;
 }
 
-void Phase::checkQuit()
+void Phase::endPhase()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-		this->quit = true;
+	this->quit = true;
 }
 
