@@ -13,6 +13,11 @@ protected:
 
 	bool quit;
 
+	// Mouse positions
+	sf::Vector2i mousePosScreen;
+	sf::Vector2i mousePosWindow;
+	sf::Vector2f mousePosView;
+
 public:
 	// Constructors / Destructors
 	Phase(sf::RenderWindow*, std::stack<Phase*>*);
@@ -22,6 +27,7 @@ public:
 	const bool getQuit() const;
 	void endPhase();
 
+	void updateMousePositions();
 	virtual void update(const float&) = 0;
 	virtual void render(sf::RenderTarget* = nullptr) = 0;
 
