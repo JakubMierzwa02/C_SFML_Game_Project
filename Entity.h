@@ -9,6 +9,7 @@
 #include <fstream>
 #include <string>
 #include <stack>
+#include <map>
 
 class Entity
 {

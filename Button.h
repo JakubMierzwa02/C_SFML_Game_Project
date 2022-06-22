@@ -10,9 +10,13 @@
 #include <SFML/System.hpp>
 #include <SFML/Audio.hpp>
 
+enum button_states { BTN_IDLE = 0, BTN_HOVER, BTN_ACTIVE };
+
 class Button
 {
 private:
+	short buttonState;
+
 	sf::RectangleShape shape;
 	sf::Font* font;
 	sf::Text text;
@@ -25,6 +29,8 @@ public:
 	Button(float, float, float, float, sf::Font*, std::string, sf::Color, sf::Color, sf::Color);
 	virtual ~Button();
 
-	void update();
+	const bool isPressed() const;
+
+	void update(sf::Vector2f);
 	void render(sf::RenderTarget*);
 };
