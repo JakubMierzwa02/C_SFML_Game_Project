@@ -3,8 +3,6 @@
 // Initializer functions
 void Game::initVariables()
 {
-	//this->videoMode = sf::VideoMode(1280, 720);
-	//this->name = "SFML Project";
 	this->dt = 0.f;
 }
 

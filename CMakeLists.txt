@@ -15,7 +15,9 @@ GamePhase.cpp
 Entity.h 
 Entity.cpp 
 MainMenuPhase.h 
-MainMenuPhase.cpp)
+MainMenuPhase.cpp 
+Button.h 
+Button.cpp)
 
 target_link_libraries(SFML_Game sfml-audio sfml-graphics sfml-window sfml-system)
 
