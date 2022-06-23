@@ -10,6 +10,6 @@ private:
 	void initVariables();
 
 public:
-	Player(const float, const float, sf::Texture*);
+	Player(const float, const float, sf::Texture*, sf::Vector2f);
 	virtual ~Player();
 };

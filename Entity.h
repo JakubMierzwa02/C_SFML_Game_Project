@@ -27,7 +27,7 @@ public:
 	Entity();
 	virtual ~Entity();
 
-	void createSprite(sf::Texture*);
+	void createSprite(sf::Texture*, sf::Vector2f);
 
 	// Functions
 	void setPosition(const float x, const float y);

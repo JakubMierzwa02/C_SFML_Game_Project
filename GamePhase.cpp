@@ -8,7 +8,7 @@ void GamePhase::initTextures()
 
 void GamePhase::initPlayer()
 {
-	this->player = new Player(0, 0, &this->textures["PLAYER"]);
+	this->player = new Player(0, 0, &this->textures["PLAYER"], sf::Vector2f(4.f, 4.f));
 }
 
 GamePhase::GamePhase(sf::RenderWindow* window, std::stack<Phase*>* phases)
@@ -31,11 +31,11 @@ void GamePhase::updateInput(const float& dt)
 	// Update player input
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		this->player->move(dt, -1.f, 0);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		this->player->move(dt, 1.f, 0);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		this->player->move(dt, 0, -1.f);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		this->player->move(dt, 0, 1.f);
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))

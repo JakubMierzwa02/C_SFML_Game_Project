@@ -18,10 +18,11 @@ Entity::~Entity()
 
 }
 
-void Entity::createSprite(sf::Texture* texture)
+void Entity::createSprite(sf::Texture* texture, sf::Vector2f scale)
 {
 	this->texture = texture;
 	this->sprite = new sf::Sprite(*this->texture);
+	this->sprite->setScale(scale);
 }
 
 void Entity::setPosition(const float x, const float y)
