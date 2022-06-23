@@ -5,7 +5,11 @@
 class GamePhase : public Phase
 {
 private:
-	Entity player;
+	Player* player;
+
+	// Initializer functions
+	void initTextures();
+	void initPlayer();
 
 public:
 	GamePhase(sf::RenderWindow*, std::stack<Phase*>*);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Entity.h"
+#include "Player.h"
 
 class Phase
 {
@@ -17,6 +17,9 @@ protected:
 	sf::Vector2i mousePosScreen;
 	sf::Vector2i mousePosWindow;
 	sf::Vector2f mousePosView;
+
+	// Resources
+	std::map<std::string, sf::Texture> textures;
 
 public:
 	// Constructors / Destructors

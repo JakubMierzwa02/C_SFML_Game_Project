@@ -14,15 +14,23 @@
 class Entity
 {
 private:
-	sf::RectangleShape shape;
+	sf::Texture* texture;
+	sf::Sprite* sprite;
+
 	float movementSpeed;
+
+	// Initializer functions
+	void initVariables();
 
 public:
 	// Constructors / Destructors
 	Entity();
 	virtual ~Entity();
 
+	void createSprite(sf::Texture*);
+
 	// Functions
+	void setPosition(const float x, const float y);
 	void move(const float&, const float, const float);
 
 	virtual void update(const float&);
