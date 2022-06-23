@@ -10,6 +10,7 @@ Player::Player(const float x, const float y, sf::Texture* texture, sf::Vector2f 
 	this->initVariables();
 
 	this->createSprite(texture, scale);
+	this->createMovement(300.f);
 	this->setPosition(x, y);
 }
 

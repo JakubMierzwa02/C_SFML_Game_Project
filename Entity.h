@@ -1,15 +1,6 @@
 #pragma once
 
-#include "SFML/Graphics.hpp"
-#include "SFML/Window.hpp"
-#include "SFML/System.hpp"
-#include "SFML/Network.hpp"
-
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <stack>
-#include <map>
+#include "Movement.h"
 
 class Entity
 {
@@ -17,7 +8,7 @@ private:
 	sf::Texture* texture;
 	sf::Sprite* sprite;
 
-	float movementSpeed;
+	Movement* movement;
 
 	// Initializer functions
 	void initVariables();
@@ -28,9 +19,10 @@ public:
 	virtual ~Entity();
 
 	void createSprite(sf::Texture*, sf::Vector2f);
+	void createMovement(const float);
 
 	// Functions
-	void setPosition(const float x, const float y);
+	void setPosition(const float, const float);
 	void move(const float&, const float, const float);
 
 	virtual void update(const float&);
